@@ -101,6 +101,7 @@ public class Action implements ActionListener {
                 }
                 parent = new DefaultMutableTreeNode(value);
                 parent.add(child);
+                
                 tree.getRoot().removeAllChildren();
                 tree.getRoot().add(parent);
                 tree.update();
@@ -119,6 +120,7 @@ public class Action implements ActionListener {
                     }
                     parent = new DefaultMutableTreeNode(value);
                     parent.add(child);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
                     tree.update();

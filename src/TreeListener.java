@@ -34,31 +34,38 @@ public class TreeListener implements TreeExpansionListener {
                 node.setUserObject(String.valueOf(1 / Double.parseDouble(firstOperand.toString())));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("sqrt")) {
+            }
+            else if (node.getUserObject().toString().equals("sqrt")) {
                 node.setUserObject(String.valueOf(Math.sqrt(Double.parseDouble(firstOperand.toString()))));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("sin")) {
+            }
+            else if (node.getUserObject().toString().equals("sin")) {
                 node.setUserObject(String.valueOf(Math.sin(Double.parseDouble(firstOperand.toString()))));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("cos")) {
+            }
+            else if (node.getUserObject().toString().equals("cos")) {
                 node.setUserObject(String.valueOf(Math.cos(Double.parseDouble(firstOperand.toString()))));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("tan")) {
+            }
+            else if (node.getUserObject().toString().equals("tan")) {
                 node.setUserObject(String.valueOf(Math.tan(Double.parseDouble(firstOperand.toString()))));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("sinh")) {
+            }
+            else if (node.getUserObject().toString().equals("sinh")) {
                 node.setUserObject(String.valueOf(Math.sinh(Double.parseDouble(firstOperand.toString()))));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("cosh")) {
+            }
+            else if (node.getUserObject().toString().equals("cosh")) {
                 node.setUserObject(String.valueOf(Math.cosh(Double.parseDouble(firstOperand.toString()))));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("tanh")) {
+            }
+            else if (node.getUserObject().toString().equals("tanh")) {
                 node.setUserObject(String.valueOf(Math.tanh(Double.parseDouble(firstOperand.toString()))));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
@@ -72,40 +79,48 @@ public class TreeListener implements TreeExpansionListener {
                 node.setUserObject(Double.parseDouble(firstOperand.toString()) + Double.parseDouble(secondOperand.toString()));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("+")) {
+            }
+            else if (node.getUserObject().toString().equals("+")) {
                 node.setUserObject(Double.parseDouble(firstOperand.toString()) + Double.parseDouble(secondOperand.toString()));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("-") && minus.getLast() == TreeListener.FIRST) {
+            }
+            else if (node.getUserObject().toString().equals("-") && minus.getLast() == TreeListener.FIRST) {
                 node.setUserObject(Double.parseDouble(firstOperand.toString()) - Double.parseDouble(secondOperand.toString()));
                 minus.removeLast();
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("-") && minus.getLast() == TreeListener.SECOND) {
+            }
+            else if (node.getUserObject().toString().equals("-") && minus.getLast() == TreeListener.SECOND) {
                 node.setUserObject(Double.parseDouble(secondOperand.toString()) - Double.parseDouble(firstOperand.toString()));
                 minus.removeLast();
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("/") && division.getLast() == TreeListener.FIRST) {
+            }
+            else if (node.getUserObject().toString().equals("/") && division.getLast() == TreeListener.FIRST) {
                 node.setUserObject(Double.parseDouble(firstOperand.toString()) / Double.parseDouble(secondOperand.toString()));
                 division.removeLast();
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("/") && division.getLast() == TreeListener.SECOND) {
+            }
+            else if (node.getUserObject().toString().equals("/") && division.getLast() == TreeListener.SECOND) {
                 node.setUserObject(Double.parseDouble(secondOperand.toString()) / Double.parseDouble(firstOperand.toString()));
                 division.removeLast();
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("*")) {
+            }
+            else if (node.getUserObject().toString().equals("*")) {
                 node.setUserObject((Double.parseDouble(secondOperand.toString()) * Double.parseDouble(firstOperand.toString())));
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("%") && mod.getLast() == TreeListener.FIRST) {
+            }
+            else if (node.getUserObject().toString().equals("%") && mod.getLast() == TreeListener.FIRST) {
                 node.setUserObject(Double.parseDouble(firstOperand.toString()) % Double.parseDouble(secondOperand.toString()));
                 mod.removeLast();
                 index++;
                 screen.getScreen().setText(tree.getExpressions().get(index));
-            } else if (node.getUserObject().toString().equals("%") && mod.getLast() == TreeListener.SECOND) {
+            }
+            else if (node.getUserObject().toString().equals("%") && mod.getLast() == TreeListener.SECOND) {
                 node.setUserObject(Double.parseDouble(secondOperand.toString()) % Double.parseDouble(firstOperand.toString()));
                 mod.removeLast();
                 index++;
@@ -128,31 +143,38 @@ public class TreeListener implements TreeExpansionListener {
                     node.setUserObject("1/x");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Math.sqrt(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
+                }
+                else if (Math.sqrt(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
                     node.setUserObject("sqrt");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Math.sin(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
+                }
+                else if (Math.sin(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
                     node.setUserObject("sin");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Math.cos(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
+                }
+                else if (Math.cos(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
                     node.setUserObject("cos");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Math.tan(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
+                }
+                else if (Math.tan(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
                     node.setUserObject("tan");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Math.sinh(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
+                }
+                else if (Math.sinh(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
                     node.setUserObject("sinh");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Math.cosh(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
+                }
+                else if (Math.cosh(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
                     node.setUserObject("cosh");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Math.tanh(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
+                }
+                else if (Math.tanh(Double.parseDouble(firstOperand.toString())) == Double.parseDouble(node.toString())) {
                     node.setUserObject("tanh");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
@@ -165,36 +187,43 @@ public class TreeListener implements TreeExpansionListener {
                     node.setUserObject("+");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Double.parseDouble(firstOperand.toString()) * Double.parseDouble(secondOperand.toString()) == Double.parseDouble(node.toString())) {
+                }
+                else if (Double.parseDouble(firstOperand.toString()) * Double.parseDouble(secondOperand.toString()) == Double.parseDouble(node.toString())) {
                     node.setUserObject("*");
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Double.parseDouble(firstOperand.toString()) % Double.parseDouble(secondOperand.toString()) == Double.parseDouble(node.toString())) {
+                }
+                else if (Double.parseDouble(firstOperand.toString()) % Double.parseDouble(secondOperand.toString()) == Double.parseDouble(node.toString())) {
                     node.setUserObject("%");
                     mod.add(TreeListener.FIRST);
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Double.parseDouble(secondOperand.toString()) % Double.parseDouble(firstOperand.toString()) == Double.parseDouble(node.toString())) {
+                }
+                else if (Double.parseDouble(secondOperand.toString()) % Double.parseDouble(firstOperand.toString()) == Double.parseDouble(node.toString())) {
                     node.setUserObject("%");
                     mod.add(TreeListener.SECOND);
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Double.parseDouble(secondOperand.toString()) - Double.parseDouble(firstOperand.toString()) == Double.parseDouble(node.toString())) {
+                }
+                else if (Double.parseDouble(secondOperand.toString()) - Double.parseDouble(firstOperand.toString()) == Double.parseDouble(node.toString())) {
                     node.setUserObject("-");
                     minus.add(TreeListener.SECOND);
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Double.parseDouble(firstOperand.toString()) - Double.parseDouble(secondOperand.toString()) == Double.parseDouble(node.toString())) {
+                }
+                else if (Double.parseDouble(firstOperand.toString()) - Double.parseDouble(secondOperand.toString()) == Double.parseDouble(node.toString())) {
                     node.setUserObject("-");
                     minus.add(TreeListener.FIRST);
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Double.parseDouble(firstOperand.toString()) / Double.parseDouble(secondOperand.toString()) == Double.parseDouble(node.toString())) {
+                }
+                else if (Double.parseDouble(firstOperand.toString()) / Double.parseDouble(secondOperand.toString()) == Double.parseDouble(node.toString())) {
                     node.setUserObject("/");
                     division.add(TreeListener.FIRST);
                     index--;
                     screen.getScreen().setText(tree.getExpressions().get(index));
-                } else if (Double.parseDouble(secondOperand.toString()) / Double.parseDouble(firstOperand.toString()) == Double.parseDouble(node.toString())) {
+                }
+                else if (Double.parseDouble(secondOperand.toString()) / Double.parseDouble(firstOperand.toString()) == Double.parseDouble(node.toString())) {
                     node.setUserObject("/");
                     division.add(TreeListener.SECOND);
                     index--;

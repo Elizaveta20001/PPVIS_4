@@ -9,6 +9,7 @@ public class Calculator {
         calculatorPanel = Box.createVerticalBox();
         calculatorScreen = new Screen();
         buttons = new Buttons(calculatorScreen, window, tree);
+
         calculatorPanel.add(calculatorScreen.getScreen());
         calculatorPanel.add(Box.createVerticalStrut(6));
         calculatorPanel.add(buttons.getPanel());

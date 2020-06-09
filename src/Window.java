@@ -8,8 +8,10 @@ public class Window {
         Tree treePanel=new Tree();
         Calculator calculator=new Calculator(this,treePanel);
         Box boxPanel=Box.createHorizontalBox();
+
         JScrollPane treeScrollPane=new JScrollPane(treePanel.getTree());
         treeScrollPane.setPreferredSize(new Dimension(200, 250));
+
         boxPanel.add(treeScrollPane);
         boxPanel.add(Box.createHorizontalStrut(12));
         boxPanel.add(calculator.getPanel());

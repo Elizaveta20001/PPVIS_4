@@ -46,8 +46,10 @@ public class Parse {
                     operands.add(Math.sin(firstOperand));
                     parent = new DefaultMutableTreeNode(Math.sin(firstOperand));
                     parent.add(child1);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace("sin(" + firstOperand + ")", parent.toString());
                     tree.getExpressions().add(expression);
                     break;
@@ -56,8 +58,10 @@ public class Parse {
                     operands.add(Math.cos(firstOperand));
                     parent = new DefaultMutableTreeNode(Math.cos(firstOperand));
                     parent.add(child1);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace("cos(" + firstOperand + ")", parent.toString());
                     tree.getExpressions().add(expression);
                     break;
@@ -66,8 +70,10 @@ public class Parse {
                     operands.add(Math.tan(firstOperand));
                     parent = new DefaultMutableTreeNode(Math.tan(firstOperand));
                     parent.add(child1);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace("tan(" + firstOperand + ")", parent.toString());
                     tree.getExpressions().add(expression);
                     break;
@@ -77,8 +83,10 @@ public class Parse {
                     operands.add(Math.sinh(firstOperand));
                     parent = new DefaultMutableTreeNode(Math.sinh(firstOperand));
                     parent.add(child1);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace("sinh(" + firstOperand + ")", parent.toString());
                     tree.getExpressions().add(expression);
                     break;
@@ -87,8 +95,10 @@ public class Parse {
                     operands.add(Math.cosh(firstOperand));
                     parent = new DefaultMutableTreeNode(Math.cosh(firstOperand));
                     parent.add(child1);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace("cosh(" + firstOperand + ")", parent.toString());
                     tree.getExpressions().add(expression);
                     break;
@@ -97,8 +107,10 @@ public class Parse {
                     operands.add(Math.tanh(firstOperand));
                     parent = new DefaultMutableTreeNode(Math.tanh(firstOperand));
                     parent.add(child1);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace("tanh(" + firstOperand + ")", parent.toString());
                     tree.getExpressions().add(expression);
                     break;
@@ -110,7 +122,8 @@ public class Parse {
                     child1 = laterNode;
                     child2 = new DefaultMutableTreeNode(secondOperand);
                     laterNode = new DefaultMutableTreeNode();
-                } else if (secondOperand == Double.valueOf(laterNode.toString())) {
+                }
+                else if (secondOperand == Double.valueOf(laterNode.toString())) {
                     child2 = laterNode;
                     child1 = new DefaultMutableTreeNode(firstOperand);
                     laterNode = new DefaultMutableTreeNode();
@@ -124,10 +137,12 @@ public class Parse {
                     if (firstOperand == Double.valueOf(parent.toString())) {
                         child1 = parent;
                         child2 = new DefaultMutableTreeNode(secondOperand);
-                    } else if (secondOperand == Double.valueOf(parent.toString())) {
+                    }
+                    else if (secondOperand == Double.valueOf(parent.toString())) {
                         child2 = parent;
                         child1 = new DefaultMutableTreeNode(firstOperand);
-                    } else {
+                    }
+                    else {
                         laterNode = parent;
                         child1 = new DefaultMutableTreeNode(firstOperand);
                         child2 = new DefaultMutableTreeNode(secondOperand);
@@ -138,8 +153,10 @@ public class Parse {
                 case "+":
                     operands.add(firstOperand + secondOperand);
                     parent = new DefaultMutableTreeNode(firstOperand + secondOperand);
+
                     parent.add(child1);
                     parent.add(child2);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
 
@@ -186,8 +203,10 @@ public class Parse {
                     parent = new DefaultMutableTreeNode(firstOperand * secondOperand);
                     parent.add(child1);
                     parent.add(child2);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace(secondOperand + "*" + firstOperand, parent.toString());
                     tree.getExpressions().add(expression);
                     break;
@@ -196,8 +215,10 @@ public class Parse {
                     parent = new DefaultMutableTreeNode(secondOperand / firstOperand);
                     parent.add(child1);
                     parent.add(child2);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace(secondOperand + "/" + firstOperand, parent.toString());
                     tree.getExpressions().add(expression);
                     break;
@@ -206,8 +227,10 @@ public class Parse {
                     parent = new DefaultMutableTreeNode(secondOperand % firstOperand);
                     parent.add(child1);
                     parent.add(child2);
+
                     tree.getRoot().removeAllChildren();
                     tree.getRoot().add(parent);
+
                     expression = tree.getExpressions().getLast().replace(secondOperand + "%" + firstOperand, parent.toString());
                     tree.getExpressions().add(expression);
                     break;
